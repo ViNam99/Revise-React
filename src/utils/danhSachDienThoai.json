@@ -1,0 +1,28 @@
+[
+    {
+        "id": 1,
+        "name": "Oppo R1",
+        "image": "/img/vsphone.jpg",
+        "description": "Sản phẩm của china",
+        "price": 450,
+        "invetory": 10,
+        "rating": 3
+     },
+     {
+        "id": 2,
+        "name": "Samsung Galaxy Note 9",
+        "image": "/img/applephone.jpg",
+        "description": "Sản phẩm của Hàn Quốc",
+        "price": 800,
+        "invetory": 1,
+        "rating": 3
+     }, {
+        "id": 3,
+        "name": "Iphone XS",
+        "image": "/img/meizuphone.jpg",
+        "description": "Sản phẩm của US",
+        "price": 600,
+        "invetory": 15,
+        "rating": 3
+     }
+]
