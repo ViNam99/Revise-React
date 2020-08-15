@@ -1,11 +1,13 @@
 import React from 'react'
-import BaiTapGioHang from './components/BaiTapGioHang';
+import BaiTapGioHangHook from './components/BaiTapGioHangHook'
+// import BaiTapGioHang from './components/BaiTapGioHang';
 
 
 const App = () => {
   return (
     <>
-      <BaiTapGioHang/> 
+      {/* <BaiTapGioHang/>  */}
+      <BaiTapGioHangHook/>
     </>
   )
 }
