@@ -1,6 +1,8 @@
 import React from "react";
-import { GioHangProvider } from "./common/contexts/GioHangContext";
-import BaiTapGioHangContext from "./components/BaiTapGioHangContext";
+// import { GioHangProvider } from "./common/contexts/GioHangContext";
+// import BaiTapGioHangContext from "./components/BaiTapGioHangContext";
+import { GioHangProviderHook } from "./common/contexts/GioHangContextHook";
+import BaiTapGioHangContextHook from "./components/BaiTapGioHangContextHook";
 // import BaiTapGioHangHook from './components/BaiTapGioHangHook'
 // import { DemoProvider, DemoContext } from './common/contexts/DemoContext'
 // import LearnContext from "./components/DemoContexAPI";
@@ -16,9 +18,13 @@ const App = () => {
          <LearnContext/>
       </DemoProvider> */}
 
-      <GioHangProvider>
+      {/* <GioHangProvider>
         <BaiTapGioHangContext />
-      </GioHangProvider>
+      </GioHangProvider> */}
+
+      <GioHangProviderHook>
+        <BaiTapGioHangContextHook />
+      </GioHangProviderHook>
     </>
   );
 };
