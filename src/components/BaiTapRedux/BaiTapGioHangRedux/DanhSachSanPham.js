@@ -2,8 +2,8 @@ import React from "react";
 import { connect, useSelector } from "react-redux";
 import SanPhamGioHang from "./SanPhamGioHang";
 const DanhSachSanPham = ({ ...props }) => {
-  // const { listGioHang } = props;
-  const { listGioHang } = useSelector((state) => state.GioHangReducer);
+  const { listGioHang } = props;
+  // const { listGioHang } = useSelector((state) => state.GioHangReducer);
 
   const renderDanhSachSanPham = () => {
     let result = null;
@@ -14,8 +14,8 @@ const DanhSachSanPham = ({ ...props }) => {
   };
   return <div className="row">{renderDanhSachSanPham()}</div>;
 };
-// const mapStateToProps = (state) => ({
-//   listGioHang: state.GioHangReducer.listGioHang,
-// });
-// export default connect(mapStateToProps, null)(DanhSachSanPham);
-export default DanhSachSanPham;
+const mapStateToProps = (state) => ({
+  listGioHang: state.GioHangReducer.listGioHang,
+});
+export default connect(mapStateToProps, null)(DanhSachSanPham);
+// export default DanhSachSanPham;

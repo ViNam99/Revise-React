@@ -6,17 +6,18 @@ import { connect, useSelector, useDispatch } from "react-redux";
 import { getLocalStorageAction } from "../../../redux/actions/GioHangAct";
 
 const BaiTapGioHangRedux = ({ ...props }) => {
-  // const { chitietSanPham, getLocalStorage, gioHang } = props;
-  const dispatch = useDispatch();
-  const { chitietSanPham, gioHang } = useSelector(
-    (state) => state.GioHangReducer
-  );
+  const { chitietSanPham, getLocalStorage, gioHang } = props;
+  
+  // const dispatch = useDispatch();
+  // const { chitietSanPham, gioHang } = useSelector(
+  //   (state) => state.GioHangReducer
+  // );
 
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem("gioHang"));
-    // if (data) getLocalStorage(data);
-    if (data) dispatch(getLocalStorageAction(data));
-  }, [dispatch]);
+    if (data) getLocalStorage(data);
+    // if (data) dispatch(getLocalStorageAction(data));
+  }, [getLocalStorage]);
 
   const totalSL = gioHang.reduce((total, spGioHang) => {
     return (total += spGioHang.soLuong);
@@ -47,13 +48,13 @@ const BaiTapGioHangRedux = ({ ...props }) => {
   );
 };
 
-// const mapStateToProps = (state) => ({
-//   chitietSanPham: state.GioHangReducer.chitietSanPham,
-//   gioHang: state.GioHangReducer.gioHang,
-// });
+const mapStateToProps = (state) => ({
+  chitietSanPham: state.GioHangReducer.chitietSanPham,
+  gioHang: state.GioHangReducer.gioHang,
+});
 
-// const mapDispatchToProps = (dispatch) => ({
-//   getLocalStorage: (gioHang) => dispatch(getLocalStorageAction(gioHang)),
-// });
-// export default connect(mapStateToProps, mapDispatchToProps)(BaiTapGioHangRedux);
-export default BaiTapGioHangRedux;
+const mapDispatchToProps = (dispatch) => ({
+  getLocalStorage: (gioHang) => dispatch(getLocalStorageAction(gioHang)),
+});
+export default connect(mapStateToProps, mapDispatchToProps)(BaiTapGioHangRedux);
+// export default BaiTapGioHangRedux;

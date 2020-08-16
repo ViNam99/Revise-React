@@ -5,9 +5,11 @@ import {
   tangGiamSLAction,
 } from "../../../redux/actions/GioHangAct";
 const ModalGioHang = ({ ...props }) => {
-  // const { gioHang, xoaSanPham, tangGiamSL } = props;
-  const dispatch = useDispatch();
-  const { gioHang } = useSelector((state) => state.GioHangReducer);
+  const { gioHang, xoaSanPham, tangGiamSL } = props;
+
+  // const dispatch = useDispatch();
+  // const { gioHang } = useSelector((state) => state.GioHangReducer);
+
   const renderGioHang = () => {
     let result = null;
     if (gioHang.length < 0) return result;
@@ -22,16 +24,16 @@ const ModalGioHang = ({ ...props }) => {
           <td>
             <button
               className="btn btn-primary mr-2"
-              // onClick={() => tangGiamSL(sp.id, false)}
-              onClick={() => dispatch(tangGiamSLAction(sp.id, false))}
+              onClick={() => tangGiamSL(sp.id, false)}
+              // onClick={() => dispatch(tangGiamSLAction(sp.id, false))}
             >
               -
             </button>
             {sp.soLuong}
             <button
               className="btn btn-primary ml-2"
-              // onClick={() => tangGiamSL(sp.id, true)}
-              onClick={() => dispatch(tangGiamSLAction(sp.id, true))}
+              onClick={() => tangGiamSL(sp.id, true)}
+              // onClick={() => dispatch(tangGiamSLAction(sp.id, true))}
             >
               +
             </button>
@@ -41,8 +43,8 @@ const ModalGioHang = ({ ...props }) => {
           <td>
             <button
               className="btn btn-danger"
-              // onClick={() => xoaSanPham(sp.id)}
-              onClick={() => dispatch(xoaSanPhamAction(sp.id))}
+              onClick={() => xoaSanPham(sp.id)}
+              // onClick={() => dispatch(xoaSanPhamAction(sp.id))}
             >
               X
             </button>
@@ -107,12 +109,12 @@ const ModalGioHang = ({ ...props }) => {
     </div>
   );
 };
-// const mapStateToProps = (state) => ({
-//   gioHang: state.GioHangReducer.gioHang,
-// });
-// const mapDispatchToProps = (dispatch) => ({
-//   xoaSanPham: (id) => dispatch(xoaSanPhamAction(id)),
-//   tangGiamSL: (id, bool) => dispatch(tangGiamSLAction(id, bool)),
-// });
-// export default connect(mapStateToProps, mapDispatchToProps)(ModalGioHang);
-export default ModalGioHang;
+const mapStateToProps = (state) => ({
+  gioHang: state.GioHangReducer.gioHang,
+});
+const mapDispatchToProps = (dispatch) => ({
+  xoaSanPham: (id) => dispatch(xoaSanPhamAction(id)),
+  tangGiamSL: (id, bool) => dispatch(tangGiamSLAction(id, bool)),
+});
+export default connect(mapStateToProps, mapDispatchToProps)(ModalGioHang);
+// export default ModalGioHang;
