@@ -1,8 +1,9 @@
 import React from "react";
 // import { GioHangProvider } from "./common/contexts/GioHangContext";
 // import BaiTapGioHangContext from "./components/BaiTapGioHangContext";
-import { GioHangProviderHook } from "./common/contexts/GioHangContextHook";
-import BaiTapGioHangContextHook from "./components/BaiTapGioHangContextHook";
+// import { GioHangProviderHook } from "./common/contexts/GioHangContextHook";
+// import BaiTapGioHangContextHook from "./components/BaiTapGioHangContextHook";
+import BaiTapGioHangRedux from "./components/BaiTapRedux/BaiTapGioHangRedux";
 // import BaiTapGioHangHook from './components/BaiTapGioHangHook'
 // import { DemoProvider, DemoContext } from './common/contexts/DemoContext'
 // import LearnContext from "./components/DemoContexAPI";
@@ -22,9 +23,11 @@ const App = () => {
         <BaiTapGioHangContext />
       </GioHangProvider> */}
 
-      <GioHangProviderHook>
+      {/* <GioHangProviderHook>
         <BaiTapGioHangContextHook />
-      </GioHangProviderHook>
+      </GioHangProviderHook> */}
+
+      <BaiTapGioHangRedux/>
     </>
   );
 };
