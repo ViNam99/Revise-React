@@ -1,12 +1,13 @@
 import React from "react";
-import { connect } from "react-redux";
+import { connect, useDispatch } from "react-redux";
 import {
   xemChiTietSanPhamAction,
   muaSanPhamAction,
 } from "../../../redux/actions/GioHangAct";
 const SanPhamGioHang = ({ ...props }) => {
-  const { sanpham, xemChitietSanPham, muaSanPham } = props;
-
+  // const { sanpham, xemChitietSanPham, muaSanPham } = props;
+  const dispatch = useDispatch();
+  const {sanpham} = props;
   return (
     <div className="col-lg-4 text-center">
       <div className="card" style={{ width: "18rem" }}>
@@ -23,13 +24,15 @@ const SanPhamGioHang = ({ ...props }) => {
         <div className="card-footer">
           <button
             className="btn btn-success mr-5"
-            onClick={() => xemChitietSanPham(sanpham)}
+            // onClick={() => xemChitietSanPham(sanpham)}
+            onClick={() => dispatch(xemChiTietSanPhamAction(sanpham))}
           >
             Chi tiết
           </button>
           <button
             className="btn btn-primary"
-            onClick={() => muaSanPham(sanpham)}
+            // onClick={() => muaSanPham(sanpham)}
+            onClick={() => dispatch(muaSanPhamAction(sanpham))}
           >
             Mua
           </button>
@@ -39,8 +42,9 @@ const SanPhamGioHang = ({ ...props }) => {
   );
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  xemChitietSanPham: (sanpham) => dispatch(xemChiTietSanPhamAction(sanpham)),
-  muaSanPham: (sanpham) => dispatch(muaSanPhamAction(sanpham)),
-});
-export default connect(null, mapDispatchToProps)(SanPhamGioHang);
+// const mapDispatchToProps = (dispatch) => ({
+//   xemChitietSanPham: (sanpham) => dispatch(xemChiTietSanPhamAction(sanpham)),
+//   muaSanPham: (sanpham) => dispatch(muaSanPhamAction(sanpham)),
+// });
+// export default connect(null, mapDispatchToProps)(SanPhamGioHang);
+export default SanPhamGioHang;
