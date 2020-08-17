@@ -1,4 +1,5 @@
 import React from "react";
+import DemoReduxToolKit from "./components/DemoReduxToolKit";
 // import { GioHangProvider } from "./common/contexts/GioHangContext";
 // import BaiTapGioHangContext from "./components/BaiTapGioHangContext";
 // import { GioHangProviderHook } from "./common/contexts/GioHangContextHook";
@@ -27,7 +28,9 @@ const App = () => {
         <BaiTapGioHangContextHook />
       </GioHangProviderHook> */}
 
-      <BaiTapGioHangRedux/>
+      {/* <BaiTapGioHangRedux/> */}
+
+      <DemoReduxToolKit/>
     </>
   );
 };

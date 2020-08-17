@@ -7,15 +7,15 @@ class SanPhamGioHang extends Component {
     this.state = {};
   }
 
-  handleXemChiTiet = (sanpham) => {
-      this.props.handleXemChiTietDS(sanpham);
-  };
+  // handleXemChiTiet = (sanpham) => {
+  //     this.props.handleXemChiTietDS(sanpham);
+  // };
 
   handleMuaSanPham = sanPham => {
       this.props.handleMuaSanPhamDS(sanPham);
   }
   render() {
-    const { sanPham } = this.props;
+    const { sanPham,handleXemChiTietDS } = this.props;
     return (
       <div className="col-lg-4 text-center">
         <div className="card" style={{ width: "18rem" }}>
@@ -32,7 +32,7 @@ class SanPhamGioHang extends Component {
           <div className="card-footer">
             <button
               className="btn btn-success mr-5"
-              onClick={() => this.handleXemChiTiet(sanPham)}
+              onClick={() => handleXemChiTietDS(sanPham)}
             >
               Chi tiết
             </button>
