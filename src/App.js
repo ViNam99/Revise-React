@@ -1,10 +1,11 @@
 import React from "react";
-import DemoReduxToolKit from "./components/DemoReduxToolKit";
+// import DemoReduxToolKit from "./components/DemoReduxToolKit";
 // import { GioHangProvider } from "./common/contexts/GioHangContext";
 // import BaiTapGioHangContext from "./components/BaiTapGioHangContext";
 // import { GioHangProviderHook } from "./common/contexts/GioHangContextHook";
 // import BaiTapGioHangContextHook from "./components/BaiTapGioHangContextHook";
-import BaiTapGioHangRedux from "./components/BaiTapRedux/BaiTapGioHangRedux";
+// import BaiTapGioHangRedux from "./components/BaiTapRedux/BaiTapGioHangRedux";
+import BaiTapGioHangToolKit from "./components/BaiTapGioHangToolKit";
 // import BaiTapGioHangHook from './components/BaiTapGioHangHook'
 // import { DemoProvider, DemoContext } from './common/contexts/DemoContext'
 // import LearnContext from "./components/DemoContexAPI";
@@ -30,7 +31,9 @@ const App = () => {
 
       {/* <BaiTapGioHangRedux/> */}
 
-      <DemoReduxToolKit/>
+      {/* <DemoReduxToolKit/> */}
+
+      <BaiTapGioHangToolKit />
     </>
   );
 };
